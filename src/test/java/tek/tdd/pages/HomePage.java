@@ -17,7 +17,17 @@ public class HomePage extends SeleniumUtility {
 
     //@FindBy approach
     @FindBy(xpath = "//mat-toolbar/span[1]")
-    public WebElement pageHeaderTitle;
+    private WebElement pageHeaderTitle;
+
+    @FindBy(xpath = "//mat-card/mat-card-title[1]/strong")
+    private WebElement sectionCardTitle;
 
 
+    public String getPageHeaderTitleText() {
+        return getElementText(pageHeaderTitle);
+    }
+
+    public String getSectionCardTitleText() {
+        return getElementText(sectionCardTitle);
+    }
 }
