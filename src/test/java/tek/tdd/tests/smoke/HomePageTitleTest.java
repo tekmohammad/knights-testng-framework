@@ -1,5 +1,7 @@
 package tek.tdd.tests.smoke;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.service.ExtentTestManager;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import tek.tdd.base.UIBaseTests;
@@ -23,8 +25,18 @@ public class HomePageTitleTest extends UIBaseTests {
     @Test
     public void validateLoginSectionTitle() {
         String actualSectionCardTitleText = homePage.getSectionCardTitleText();
+
+        //If you want to embed screenshot part of your test.
+        String screenshot = takeScreenshot();
+        ExtentTestManager.getTest()
+                        .pass("Step Passed",
+                                MediaEntityBuilder.createScreenCaptureFromBase64String(
+                                        screenshot, "passedTest"
+                                ).build()
+                        );
+
         assertEquals(actualSectionCardTitleText,
-                "Customer Service portal",
+                "Customer Service Portal",
                 "Validate Card Title");
     }
 }

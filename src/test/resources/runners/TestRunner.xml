@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Tek Insurance Application Test NG Automation">
+    <test name="Regression tests">
+        <packages>
+            <package name="tek.tdd.tests.smoke" />
+        </packages>
+<!--        <classes>-->
+<!--            <class name="tek.tdd.tests.smoke.HomePageTitleTest" />-->
+<!--            <class name="tek.tdd.tests.smoke.LoginSectionTests" />-->
+<!--        </classes>-->
+<!--        <classes>-->
+<!--            <class name="tek.tdd.tests.smoke.LoginSectionTests">-->
+<!--                <methods>-->
+<!--                    <include name="validateLoginButtonTest" />-->
+<!--                    <exclude name="validateLoginButtonTest" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+    </test>
+</suite>
