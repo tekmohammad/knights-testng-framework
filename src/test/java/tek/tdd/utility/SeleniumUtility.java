@@ -8,6 +8,7 @@ import org.testng.Assert;
 import tek.tdd.base.BaseSetup;
 
 import java.time.Duration;
+import java.util.List;
 
 public class SeleniumUtility extends BaseSetup {
 
@@ -31,7 +32,15 @@ public class SeleniumUtility extends BaseSetup {
         getWait().until(ExpectedConditions.elementToBeClickable(element)).click();
     }
 
+    public List<WebElement> getElements(List<WebElement> elements) {
+        return getWait().until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
     public void assertEquals(String actual, String expected, String message) {
+        Assert.assertEquals(actual, expected, message);
+    }
+
+    public void assertEquals(int actual, int expected, String message) {
         Assert.assertEquals(actual, expected, message);
     }
 
