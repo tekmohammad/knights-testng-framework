@@ -24,7 +24,7 @@ public class HomePageTitleTest extends UIBaseTests {
     public void validateLoginSectionTitle() {
         String actualSectionCardTitleText = homePage.getSectionCardTitleText();
         assertEquals(actualSectionCardTitleText,
-                "Customer Service Portal",
+                "Customer Service portal",
                 "Validate Card Title");
     }
 }

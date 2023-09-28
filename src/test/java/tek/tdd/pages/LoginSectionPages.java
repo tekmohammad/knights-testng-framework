@@ -20,6 +20,9 @@ public class LoginSectionPages extends SeleniumUtility {
     @FindBy(name = "password")
     private WebElement passwordElement;
 
+    @FindBy(xpath = "//app-banner/div")
+    private WebElement bannerMessageElement;
+
     public boolean isLoginButtonEnabled() {
         return isElementEnabled(loginButton);
     }
@@ -41,5 +44,9 @@ public class LoginSectionPages extends SeleniumUtility {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public String getBannerMessage() {
+        return getElementText(bannerMessageElement);
     }
 }
