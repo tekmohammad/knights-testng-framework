@@ -17,4 +17,17 @@ public class AccountsTests extends UIBaseTests {
 
         assertEquals(rowCount, 10, "Validate account table row");
     }
+
+
+    @Test
+    public void validateItemPerPage() {
+        loginSectionPages.login("supervisor", "tek_supervisor");
+        accountsPage.clickOnAccountsLinkAndWaitForSpinner();
+
+        accountsPage.selectItemPerPage("5");
+
+        int actualTableRowCount = accountsPage.accountsTableRowCount();
+
+        assertEquals(actualTableRowCount, 5, "Validate account table row");
+    }
 }

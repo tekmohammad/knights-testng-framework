@@ -22,6 +22,11 @@ public class AccountsPage extends SeleniumUtility {
     @FindBy(xpath = "//table/tbody/tr")
     private List<WebElement> accountsTableRow;
 
+    @FindBy(xpath = "//mat-paginator//mat-select")
+    private WebElement itemPerPagePageDropdown;
+    @FindBy(xpath = "//mat-option")
+    private List<WebElement> itemPerPageOptions;
+
     public void clickOnAccountsLinkAndWaitForSpinner() {
         clickOnElement(accountsLink);
 
@@ -31,5 +36,16 @@ public class AccountsPage extends SeleniumUtility {
 
     public int accountsTableRowCount() {
         return getElements(accountsTableRow).size();
+    }
+
+    public void selectItemPerPage(String option) {
+        clickOnElement(itemPerPagePageDropdown);
+        List<WebElement> optionElements = getElements(itemPerPageOptions);
+        for (WebElement element : optionElements) {
+            String text = getElementText(element);
+            if (text.equalsIgnoreCase(option)) {
+                clickOnElement(element);
+            }
+        }
     }
 }
