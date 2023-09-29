@@ -49,4 +49,23 @@ button should be enabled. (element.isEnabled())
         };
         return data;
     }
+
+    @Test
+    public void validateUsersLoggedIn(){
+        loginSectionPages.login("supervisor", "tek_supervisor");
+
+        String actualPageHeaderTitleText =homePage.getPageHeaderTitleText();
+        assertEquals(actualPageHeaderTitleText,
+                "Tek Insurance App",
+                "Validate page header");
+
+        String usernameText = homePage.getUsernameElementText();
+        String actualUsername = usernameText
+                .replace("account_circle", "")
+                .trim();
+
+        assertEquals(actualUsername,
+                "Supervisor",
+                "Validate logged in username");
+    }
 }

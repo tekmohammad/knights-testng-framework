@@ -22,6 +22,9 @@ public class HomePage extends SeleniumUtility {
     @FindBy(xpath = "//mat-card/mat-card-title[1]/strong")
     private WebElement sectionCardTitle;
 
+    @FindBy(xpath = "//mat-toolbar/button[2]/span")
+    private WebElement usernameElement;
+
 
     public String getPageHeaderTitleText() {
         return getElementText(pageHeaderTitle);
@@ -29,5 +32,9 @@ public class HomePage extends SeleniumUtility {
 
     public String getSectionCardTitleText() {
         return getElementText(sectionCardTitle);
+    }
+
+    public String getUsernameElementText() {
+        return getElementText(usernameElement);
     }
 }
