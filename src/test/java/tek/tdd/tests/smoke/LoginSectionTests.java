@@ -41,13 +41,12 @@ button should be enabled. (element.isEnabled())
 
     @DataProvider(name = "negativeLoginData")
     public String[][] negativeTestDate() {
-        String[][] data = {
+        return new String[][]{
                 {"Wrong username", "tek_supervisor", "User not found"},
                 {"supervisor", "invalidPassword", "Password Not Matched"},
                 {"Wrong username", "invalid password", "User not found"},
                 {"mohammad", "some password", "Password Not Matched"}
         };
-        return data;
     }
 
     @Test

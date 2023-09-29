@@ -57,4 +57,11 @@ public class SeleniumUtility extends BaseSetup {
     public String takeScreenshot() {
         return ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.BASE64);
     }
+
+    public void waitForInvisibilityOfElement(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofMinutes(5));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+
+    }
+
 }
